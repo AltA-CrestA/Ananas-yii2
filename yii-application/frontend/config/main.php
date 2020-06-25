@@ -15,6 +15,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'enableCsrfValidation' => false,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -41,8 +42,16 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'site/index',
+                'abonement' => 'abonement/index',
+                'contact' => 'site/contact',
+                'catalog' => 'catalog/index',
             ],
         ],
     ],
     'params' => $params,
+    'aliases' => [
+        '@imgBackEnd' => '/kinza/yii-application/frontend/web/img',
+        '@imgFrontEnd' => '/img',
+    ],
 ];
