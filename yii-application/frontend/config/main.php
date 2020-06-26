@@ -46,6 +46,7 @@ return [
                 'abonement' => 'abonement/index',
                 'contact' => 'site/contact',
                 'catalog' => 'catalog/index',
+                'category/<category:\w+>/<id:\d+>' => 'catalog/category',
             ],
         ],
     ],
