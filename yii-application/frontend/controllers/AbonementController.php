@@ -4,6 +4,7 @@
 namespace frontend\controllers;
 
 
+use frontend\models\Abonement;
 use yii\web\Controller;
 
 class AbonementController extends Controller
@@ -11,7 +12,11 @@ class AbonementController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $abonementList = Abonement::find()->orderBy('id')->all();
+
+        return $this->render('index', [
+            'abonementList' => $abonementList,
+        ]);
     }
 
 }
