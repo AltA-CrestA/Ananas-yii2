@@ -52,7 +52,37 @@ SiteAsset::register($this);
                 </ul>
             </nav>
             <div class="header-login steal__big">
-                <a href="<?php echo Url::to(['user/signup']); ?>" class="login__button">Войти</a>
+                <?php if (Yii::$app->user->isGuest): ?>
+                    <a href="<?php echo Url::to(['user/login']); ?>" class="login__button">Войти</a>
+                <?php else: ?>
+                <div class="header__buttons">
+                    <div class="header-user">
+                        <a href="#" class="dropbtn">
+                            <i class="fas fa-user"></i>
+                            <span class="small__user">Личный кабинет</span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="/cabinet/">Мой профиль</a>
+                            <a href="/like/">Мои закладки
+                                <!--                                    (<span id="like-count">-->
+                                <!--                                        --><?php //echo Like::countItems(); ?>
+                                <!--                                    </span>)</a>-->
+                            <a><?php echo Html::beginForm(['user/logout'], 'post');
+                                    echo Html::submitButton('Выйти (' . Yii::$app->user->identity->username . ')', ['class' => 'login__button']);
+                                    echo Html::endForm(); ?>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="cart" class="header-cart">
+                        <a href="/cart/">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div class="icon__cart-basket">
+                                <span id="cart-count">1</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <div class="header__burger">
                 <span></span>
