@@ -52,7 +52,7 @@ SiteAsset::register($this);
                 </ul>
             </nav>
             <div class="header-login steal__big">
-                <a href="/user/login/" class="login__button">Войти</a>
+                <a href="<?php echo Url::to(['user/signup']); ?>" class="login__button">Войти</a>
             </div>
             <div class="header__burger">
                 <span></span>
