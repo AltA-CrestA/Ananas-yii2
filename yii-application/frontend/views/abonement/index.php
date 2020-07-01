@@ -29,7 +29,7 @@ $this->title = 'Абонементы — Ананас Shop-sharing';
             </div>
             <div class="st-col2">
                 <div class="st__price"><?php echo $abonement->price; ?> ₽</div>
-                <a href="#" data-id="1" class="st__button add-to-cart">Купить</a>
+                <a href="#" data-id="<?php echo $abonement->id; ?>" class="st__button add-to-cart">Купить</a>
             </div>
         </section>
     <?php endforeach; ?>

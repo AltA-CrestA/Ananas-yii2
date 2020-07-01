@@ -55,7 +55,7 @@ $this->title = 'Каталог — Ананас Shop-sharing';
                         <div  class="catalog__box">
                             <div class="img__product">
                                 <picture class="image__wrapper">
-                                    <img src="<?php echo Yii::getAlias('@imgFrontEnd')?>/catalog_jpg/<?php echo $product->image; ?>" alt="" class="minimized">
+                                    <img src="<?php echo Yii::getAlias('@imgFrontEnd'); ?>/catalog_jpg/<?php echo $product->image; ?>" alt="" class="minimized">
                                 </picture>
                             </div>
                             <h2><?php echo $product->name; ?></h2>

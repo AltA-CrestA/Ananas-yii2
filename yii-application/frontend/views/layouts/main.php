@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use frontend\assets\SiteAsset;
+use frontend\models\Cart;
 use yii\helpers\Html;
 use common\widgets\Alert;
 use yii\helpers\Url;
@@ -75,14 +76,14 @@ SiteAsset::register($this);
                             </a>
                         </div>
                     </div>
-                    <div id="cart" class="header-cart">
-                        <a href="/cart/">
+                    <a href="<?php echo Url::to(['cart/index']); ?>">
+                        <div id="cart" class="header-cart">
                             <i class="fas fa-shopping-cart"></i>
                             <div class="icon__cart-basket">
-                                <span id="cart-count">1</span>
+                                <span id="cart-count"><?php echo Cart::CountAbonement(); ?></span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <?php endif; ?>
             </div>

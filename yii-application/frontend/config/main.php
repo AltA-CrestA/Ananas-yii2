@@ -47,6 +47,8 @@ return [
                 'contact' => 'site/contact',
                 'catalog' => 'catalog/index',
                 'category/<category:\w+>/<id:\d+>' => 'catalog/category',
+                'cart' => 'cart/index',
+                'cart/add/<id:\d+>' => 'cart/add',
             ],
         ],
     ],
