@@ -12,26 +12,30 @@ use yii\helpers\Url;
 $this->title = 'Авторизация';
 ?>
 
-<section class="login-content">
-    <div class="login-container">
-        <div class="login-top">
-            <div class="login-title">Войти в личный кабинет</div>
-            <div class="login-text">Нет личного кабинета?
+<section class="login">
+<div class="login__content">
+    <div class="login__content-top">
+        <div class="login__content-top-title">Войти в личный кабинет</div>
+            <div class="login__content-top-text">Нет личного кабинета?
                 <a href="<?php echo Url::to(['user/signup']); ?>" class="login__link">Зарегистрируйтесь</a>
             </div>
         </div>
-        <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'login-form',]]); ?>
-            <div class="login__string">
+        <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'login__content-form',]]); ?>
+            <div class="login__content-form-item">
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'login__input']) ?>
             </div>
-            <div class="login__string">
+            <div class="login__content-form-item">
                 <?= $form->field($model, 'password')->passwordInput(['class' => 'login__input']) ?>
             </div>
-            <div class="checkbox__login">
-                <?= Html::checkbox('checkbox__input', true, ['label' => 'Запомнить меня', 'id' => 'checkbox__input']) ?>
+            <div class="login__content-form-checkbox">
+                <label>
+                    <input type="checkbox" name="remember" value="1">
+                    <div class="checkbox__div"></div>
+                </label>
+                <p>Запомнить меня</p>
             </div>
             <div id="active" class="login-bottom">
-                <?= Html::submitButton('Создать аккаунт', ['class' => 'button__login', 'name' => 'button__login']) ?>
+                <?= Html::submitButton('Войти', ['name' => 'button__login']) ?>
             </div>
 
         <?php ActiveForm::end(); ?>

@@ -13,28 +13,32 @@ $this->title = 'Регистрация';
 
 <section class="signup">
     <div class="signup-container">
-        <h1 class="signup-title">Создание аккаунта</h1>
+        <h2>Создание аккаунта</h2>
         <?php $form = ActiveForm::begin([
                 'id' => 'form-signup',
-                'options' => ['class' => 'signup-form',]
+                'options' => ['class' => 'signup__container-form',]
         ]); ?>
 
-        <div class="signup-row">
-            <div class="signup__string">
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'signup-input']) ?>
+        <div class="signup__container-form-item">
+            <div class="signup__container-form-item-string">
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
             </div>
-            <div class="signup__string">
-                <?= $form->field($model, 'email')->input('email', ['class' => 'signup-input']) ?>
-            </div>
-        </div>
-        <div class="signup-row">
-            <div class="signup__string">
-                <?= $form->field($model, 'password')->passwordInput(['class' => 'signup-input']) ?>
+            <div class="signup__container-form-item-string">
+                <?= $form->field($model, 'email')->input('email') ?>
             </div>
         </div>
-        <div class="signup-row">
+        <div class="signup__container-form-item">
+            <div class="signup__container-form-item-string">
+                <?= $form->field($model, 'password')->passwordInput() ?>
+            </div>
+        </div>
+        <div class="signup__container-form-item">
             <div class="checkbox__register">
-                <?= Html::checkbox('signup-checkbox', true, ['label' => 'Я согласен на обработку персональных данных согласно политике конфиденциальности', 'id' => 'signup-checkbox']) ?>
+                <label>
+                    <input type="checkbox" id="signup-checkbox">
+                    <div class="checkbox__div"></div>
+                </label>
+                <p>Я согласен на обработку персональных данных согласно <a href="/privacy/">политике конфиденциальности</a>.</p>
             </div>
             <?= Html::submitButton('Создать аккаунт', ['class' => 'signup__button', 'name' => 'signup-button']) ?>
         </div>
