@@ -64,7 +64,7 @@ SiteAsset::register($this);
                             <span class="small__user">Личный кабинет</span>
                         </a>
                         <div class="dropdown-content">
-                            <a href="/cabinet/">Мой профиль</a>
+                            <a href="<?php echo Url::to(['cabinet/index']); ?>">Мой профиль</a>
                             <a href="/like/">Мои закладки
                                 <!--                                    (<span id="like-count">-->
                                 <!--                                        --><?php //echo Like::countItems(); ?>
