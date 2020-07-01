@@ -26,27 +26,29 @@ SiteAsset::register($this);
 <?php $this->beginBody() ?>
 
 <header class="header">
-    <div class="container">
-        <div class="header__body">
-            <a href="/" class="header__logo">
-                <picture>
-                    <source srcset="<?php echo Yii::getAlias('@imgFrontEnd')?>/01.webp" type="image/webp">
-                    <img src="<?php echo Yii::getAlias('@imgFrontEnd')?>/01.png" alt="">
-                </picture>
-            </a>
-            <nav class="header__menu">
-                <ul class="header__list">
+    <div class="header__container">
+        <div class="header__container__body">
+            <div class="header__container__body-logo">
+                <a href="/">
+                    <picture>
+                        <source srcset="<?php echo Yii::getAlias('@imgFrontEnd')?>/01.webp" type="image/webp">
+                        <img src="<?php echo Yii::getAlias('@imgFrontEnd')?>/01.png" alt="">
+                    </picture>
+                </a>
+            </div>
+            <nav class="header__container__body-menu">
+                <ul>
                     <li>
-                        <a href="<?php echo Url::to(['catalog/index']); ?>" class="header__link">Каталог</a>
+                        <a href="<?php echo Url::to(['catalog/index']); ?>">Каталог</a>
                     </li>
                     <li>
-                        <a href="<?php echo Url::to(['abonement/index']); ?>" class="header__link">Абонементы</a>
+                        <a href="<?php echo Url::to(['abonement/index']); ?>">Абонементы</a>
                     </li>
                     <li>
-                        <a href="/#about" class="header__link">О нас</a>
+                        <a href="/#about">О нас</a>
                     </li>
                     <li>
-                        <a href="<?php echo Url::to(['site/contact']); ?>" class="header__link">Контакты</a>
+                        <a href="<?php echo Url::to(['site/contact']); ?>">Контакты</a>
                     </li>
 
                 </ul>
