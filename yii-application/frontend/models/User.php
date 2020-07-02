@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use phpDocumentor\Reflection\Types\Integer;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\redis\Connection;
@@ -128,5 +129,13 @@ class User extends ActiveRecord implements IdentityInterface
         /* @var $redis Connection */
         $redis = Yii::$app->redis;
         $redis->srem("user:{$this->id}:favorite", $product->id);
+    }
+
+    public function countFavorite()
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+
+        return $redis->scard("user:{$this->id}:favorite");
     }
 }
