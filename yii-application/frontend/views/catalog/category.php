@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use frontend\widgets\categoryList\CategoryList;
+use yii\helpers\Url;
 
 /* @var $prductList frontend\models\Product */
 
@@ -62,9 +63,17 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                 <h2><?php echo $productWomen->name; ?></h2>
                                 <p class="textforproduct">Размер: <?php echo $productWomen->size; ?> | Цвет: <?php echo $productWomen->color; ?></p>
                                 <div class="product__button">
-                                    <a href="#" data-id="1" class="btn mark add-to-like">
-                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                    </a>
+
+                                    <?php if (Yii::$app->user->isGuest): ?>
+                                        <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
+                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                        </a>
+                                    <?php else : ?>
+                                        <a href="<?php echo Url::to(['favorite/add', 'id' => $productWomen->id]); ?>" class="btn mark">
+                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                        </a>
+                                    <?php endif; ?>
+
                                 </div>
                             </div >
                         <?php endforeach; ?>
@@ -79,9 +88,17 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                 <h2><?php echo $productMen->name; ?></h2>
                                 <p class="textforproduct">Размер: <?php echo $productMen->size; ?> | Цвет: <?php echo $productMen->color; ?></p>
                                 <div class="product__button">
-                                    <a href="#" data-id="1" class="btn mark add-to-like">
-                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                    </a>
+
+                                    <?php if (Yii::$app->user->isGuest): ?>
+                                        <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
+                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                        </a>
+                                    <?php else : ?>
+                                        <a href="<?php echo Url::to(['favorite/add', 'id' => $productMen->id]); ?>" class="btn mark">
+                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                        </a>
+                                    <?php endif; ?>
+
                                 </div>
                             </div >
                         <?php endforeach; ?>
@@ -96,9 +113,17 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                 <h2><?php echo $productBisex->name; ?></h2>
                                 <p class="textforproduct">Размер: <?php echo $productBisex->size; ?> | Цвет: <?php echo $productBisex->color; ?></p>
                                 <div class="product__button">
-                                    <a href="#" data-id="1" class="btn mark add-to-like">
-                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                    </a>
+
+                                    <?php if (Yii::$app->user->isGuest): ?>
+                                        <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
+                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                        </a>
+                                    <?php else : ?>
+                                        <a href="<?php echo Url::to(['favorite/add', 'id' => $productBisex->id]); ?>" class="btn mark">
+                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                        </a>
+                                    <?php endif; ?>
+
                                 </div>
                             </div >
                         <?php endforeach; ?>

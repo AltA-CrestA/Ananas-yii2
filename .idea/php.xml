@@ -86,6 +86,7 @@
       <path value="$PROJECT_DIR$/yii-application/vendor/psr/container" />
       <path value="$PROJECT_DIR$/yii-application/vendor/composer" />
       <path value="$PROJECT_DIR$/yii-application/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/yii-application/vendor/yiisoft/yii2-redis" />
     </include_path>
   </component>
 </project>

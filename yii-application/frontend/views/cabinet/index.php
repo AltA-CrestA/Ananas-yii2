@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 
+use yii\helpers\Url;
+
 $this->title = 'Личный кабинет — Ананас Shop-sharing';
 ?>
 
@@ -62,7 +64,7 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
             <p>У вас нет закладок</p>
         </div>
         <div class="favorite-button button__page">
-            <a href="/favorite/" class="favorite-button__link">Подробнее</a>
+            <a href="<?php echo Url::to(['favorite/index']); ?>" class="favorite-button__link">Подробнее</a>
         </div>
     </section>
 </main>

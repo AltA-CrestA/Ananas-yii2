@@ -4,6 +4,7 @@ namespace frontend\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yii\redis\Connection;
 use yii\web\IdentityInterface;
 
 /**
@@ -104,5 +105,28 @@ class User extends ActiveRecord implements IdentityInterface
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
+    }
+
+    public function addFavorite($product)
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        $redis->sadd("user:{$this->id}:favorite", $product->id);
+    }
+
+    public function getFavorites()
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        $key = "user:{$this->id}:favorite";
+        $ids = $redis->smembers($key);
+        return Product::find()->where(['id' => $ids])->asArray()->all();
+    }
+
+    public function deleteFavorite($product)
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        $redis->srem("user:{$this->id}:favorite", $product->id);
     }
 }
