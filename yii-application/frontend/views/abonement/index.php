@@ -2,6 +2,8 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
+
 $this->title = 'Абонементы — Ананас Shop-sharing';
 ?>
 
@@ -29,7 +31,11 @@ $this->title = 'Абонементы — Ананас Shop-sharing';
             </div>
             <div class="st-col2">
                 <div class="st__price"><?php echo $abonement->price; ?> ₽</div>
-                <a href="#" data-id="<?php echo $abonement->id; ?>" class="st__button add-to-cart">Купить</a>
+                <?php if (Yii::$app->user->isGuest): ?>
+                    <a href="<?php echo Url::to(['user/login']); ?>" class="st__button">Купить</a>
+                <?php else: ?>
+                    <a href="#" data-id="<?php echo $abonement->id; ?>" class="st__button add-to-cart">Купить</a>
+                <?php endif; ?>
             </div>
         </section>
     <?php endforeach; ?>
