@@ -26,35 +26,35 @@ $('.vigoda__tabs .tabs__item')
 	.eq(0)
 	.addClass('active');
 
-// Цвет кнопки закладок + изменение содержимого в КАТАЛОГЕ
-$('.product__button').click(function () {
-	$(this).toggleClass('change');
-});
+// // Цвет кнопки закладок + изменение содержимого в КАТАЛОГЕ
+// $('.product__button').click(function () {
+// 	$(this).toggleClass('change');
+// });
 
-$('.product__button').click(function () {
-	if (!$(this).data('status')) {
-		$(this).html('<i class="fas fa-star"></i>&nbsp;Добавлено');
-		$(this).data('status', true);
-	} else {
-		$(this).html('<i class="far fa-star"></i>&nbsp;Добавить в закладки');
-		$(this).data('status', false);
-	}
-});
+// $('.product__button').click(function () {
+// 	if (!$(this).data('status')) {
+// 		$(this).html('<i class="fas fa-star"></i>&nbsp;Добавлено');
+// 		$(this).data('status', true);
+// 	} else {
+// 		$(this).html('<i class="far fa-star"></i>&nbsp;Добавить в закладки');
+// 		$(this).data('status', false);
+// 	}
+// });
 
-// Цвет кнопки закладок + изменение содержимого в МОИ ЗАКЛАДКИ
-$('.product__button1').click(function () {
-	$(this).toggleClass('change');
-});
+// // Цвет кнопки закладок + изменение содержимого в МОИ ЗАКЛАДКИ
+// $('.product__button1').click(function () {
+// 	$(this).toggleClass('change');
+// });
 
-$('.product__button1').click(function () {
-	if (!$(this).data('status')) {
-		$(this).html('<i class="far fa-star"></i>&nbsp;Удалено');
-		$(this).data('status', true);
-	} else {
-		$(this).html('<i class="fas fa-star"></i>&nbsp;В закладках');
-		$(this).data('status', false);
-	}
-});
+// $('.product__button1').click(function () {
+// 	if (!$(this).data('status')) {
+// 		$(this).html('<i class="far fa-star"></i>&nbsp;Удалено');
+// 		$(this).data('status', true);
+// 	} else {
+// 		$(this).html('<i class="fas fa-star"></i>&nbsp;В закладках');
+// 		$(this).data('status', false);
+// 	}
+// });
 
 // Фильтр и корзина
 $(function () {
@@ -241,10 +241,10 @@ $(function () {
 
 // AJAX для Abonement
 $(document).ready(function () {
-	$(".add-to-cart").click(function () {
-		var id = $(this).attr("data-id");
-		$.post("/cart/add/"+id, {}, function (data) {
-			$("#cart-count").html(data);
+	$('.add-to-cart').click(function () {
+		var id = $(this).attr('data-id');
+		$.post('/cart/add/' + id, {}, function (data) {
+			$('#cart-count').html(data);
 		});
 		return false;
 	});

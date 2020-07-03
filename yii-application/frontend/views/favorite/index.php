@@ -25,6 +25,9 @@ $this->title = 'Мои закладки — Ананас Shop-sharing';
                             <div class="product__button1">
                                 <a href="<?php echo Url::to(['favorite/delete', 'id' =>$favorite['id'] ]); ?>" class="mark btn__delite"><i class="fas fa-star"></i><span class="button__text"> В закладках</span></a>
                             </div>
+                            <div class="product__button1">
+                                <a href="#"><i class="far fa-star"></i><span class="button__text">&nbsp;Удалено</span></a>
+                            </div>
                         </div>
                     <?php endforeach; ?>
 

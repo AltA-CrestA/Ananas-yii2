@@ -1,0 +1,134 @@
+// Таб статусов
+
+.vigoda-content {
+    padding: 50px 0 0px 0;
+}
+
+.vigoda {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    background: #f1f1f1;
+}
+
+.vigoda-title {
+    @include fontzcolor(60px, #fff);
+    background: #09102c;
+    font-weight: 700;
+    align-self: flex-start;
+    border-bottom-right-radius: 50em;
+    border-top-right-radius: 50em;
+    padding: 20px 60px;
+    margin-top: 40px;
+}
+
+.vigoda__title {
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 0 60px 0;
+    font-weight: 700;
+}
+
+.vigoda__tabs {
+    font-family: Montserrat;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs__items {
+    display: flex;
+}
+
+.tabs__item {
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    flex: 0 1 25%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.tabs__item.active {
+    border-color: #af2179;
+}
+
+.tabs__block-title {
+    font-family: Comfortaa;
+    color: white;
+
+    .tab__silver {
+        text-shadow: 0 0 5px #c0c0c0, 0 0 10px #c0c0c0, 0 0 20px #c0c0c0, 0 0 40px #c0c0c0;
+    }
+
+    .tab__gold {
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700;
+    }
+
+    .tab__platina {
+        text-shadow: 0 0 5px #e3e3e1, 0 0 10px #e3e3e1, 0 0 20px #e3e3e1, 0 0 40px #e3e3e1;
+    }
+
+    .tab__dima {
+        text-shadow: 0 0 5px #af2179, 0 0 10px #af2179, 0 0 20px #af2179, 0 0 40px #af2179;
+    }
+}
+
+.tabs__block {
+    text-align: justify;
+    word-wrap: break-word;
+    padding: 20px;
+    font-size: 26px;
+    line-height: 40px;
+    display: none;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+}
+
+.tabs__block.is-active {
+    display: block;
+    font-size: 26px;
+    line-height: 40px;
+}
+
+.tabs__block b {
+    margin-bottom: 50px;
+}
+
+.tabs__block:nth-child(1) {
+    background-color: #09102c;
+}
+
+.tabs__block:nth-child(2) {
+    background-color: #09102c;
+}
+
+.tabs__block:nth-child(3) {
+    background-color: #09102c;
+}
+
+.tabs__block:nth-child(4) {
+    background-color: #09102c;
+}
+
+.vigoda-remark {
+    font-family: Montserrat;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+    line-height: 60px;
+}
+
+.vigoda-remark__item {
+    text-align: justify;
+    font-size: 26px;
+
+    span {
+        font-size: 30px;
+    }
+}

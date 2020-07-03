@@ -1,0 +1,390 @@
+@import "plugins/_null";
+@import "plugins/fonts.scss";
+@import "plugins/_mixins";
+@import "plugins/_view";
+@import "plugins/preloader";
+@import "cart/cart";
+@import "header-footer/_header";
+@import "header-footer/_footer";
+@import "mainPage/hi.scss";
+@import "mainPage/about.scss";
+@import "mainPage/_svg-tool";
+@import "mainPage/vigoda.scss";
+@import "contact/contact.scss";
+@import "_signup";
+@import "_login";
+@import "_catalog";
+@import "plugins/_animate";
+@import "_marker";
+@import "personal-page-edit";
+@import "personal-page";
+@import "_season-ticket";
+@import "admin/_admin";
+@import "admin/_admin__select";
+@import "admin/_admin__create";
+@import "admin/_admin__delete";
+@import "admin/_admin__category";
+@import "admin/_admin__user";
+@import "admin/_admin__ticket";
+@import "_privacy";
+//!--------END SASS---------//
+
+/*-----------------------------------*/
+
+body {
+  font-family: Comfortaa;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+.all__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buy {
+  background: url("../../img/003.jpg");
+  background-size: cover;
+  height: 110%;
+  @include disflex(flex, center, center);
+}
+
+// МЕДИА 1500px - 1000px --------------------------
+
+@media (max-width: 1025px) {
+  .about {
+    padding: 60px 30px 60px 30px;
+  }
+
+  .about-img {
+    display: none;
+    width: 0;
+  }
+}
+
+// МЕДИА 999px - 500px --------------------------
+
+@media (max-width: 999px) {
+  .hi {
+    height: 500px;
+  }
+}
+
+@media (max-width: 968px) {
+  .vigoda-remark {
+    margin-top: 40px;
+    padding: 0 20px;
+    line-height: 50px;
+  }
+
+  .vigoda-remark__item {
+    font-size: 20px;
+
+    span {
+      font-size: 28px;
+    }
+  }
+
+  .tabs__block,
+  .tabs__block.is-active {
+    font-size: 22px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact__icon {
+    height: 55px;
+    width: 55px;
+    margin-right: 28px;
+  }
+
+  .contact__round {
+    width: 655px;
+    margin: 0 auto;
+  }
+
+  .contact__title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    color: black;
+    margin: 0 0 70px 0;
+  }
+
+  .block__text {
+    margin-top: 12px;
+    text-align: start;
+    font-family: Montserrat;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 50px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vigoda__title {
+    font-size: 30px;
+  }
+
+  .about__text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact__icon {
+    height: 45px;
+    width: 45px;
+    margin-right: 15px;
+  }
+
+  .contact__round {
+    width: 540px;
+    margin: 0 auto;
+  }
+
+  .contact__title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: black;
+    margin: 0 0 70px 0;
+  }
+
+  .block__text {
+    margin-top: 8px;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 50px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabs__block,
+  .tabs__block.is-active {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .tabs__block-title {
+    margin-bottom: -20px;
+  }
+
+  .vigoda-title {
+    @include fontzcolor(40px, #fff);
+  }
+
+  .tabs__items {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact__icon {
+    height: 40px;
+    width: 40px;
+    margin-right: 12px;
+  }
+
+  .contact__round {
+    width: 435px;
+    margin: 0 auto;
+  }
+
+  .contact__title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: black;
+    margin: 0 0 40px 0;
+  }
+
+  .block__text {
+    margin-top: 5px;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 568px) {
+  .vigoda-remark {
+    margin-top: 40px;
+    line-height: 35px;
+  }
+
+  .vigoda-remark__item {
+    font-size: 16px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contact__let {
+    margin-top: 40px;
+  }
+
+  .text__stil {
+    display: none;
+  }
+
+  .contact__round {
+    width: 305px;
+    margin: 0 auto;
+  }
+
+  .contact__title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: black;
+    margin: 0 0 40px 0;
+  }
+
+  .block__text {
+    margin-top: 4px;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 30px;
+  }
+}
+
+// МЕДИА 499px - 300px --------------------------
+
+@media (max-width: 400px) {
+  .about {
+    padding: 60px 20px 60px 20px;
+  }
+
+  .vigoda-title {
+    margin-top: 0px;
+    @include fontzcolor(30px, #fff);
+    font-size: 20px;
+  }
+
+  .vigoda-remark {
+    margin-top: 40px;
+    line-height: 30px;
+  }
+
+  .vigoda-remark__item {
+    font-size: 14px;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .tabs__block,
+  .tabs__block.is-active {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .contact__icon {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+  }
+
+  .contact__let {
+    margin-top: 30px;
+  }
+
+  .contact__round {
+    width: 270px;
+    margin: 0 auto;
+  }
+
+  .contact__title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: black;
+    margin: 0 0 30px 0;
+  }
+
+  .block__text {
+    margin-top: 2px;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 30px;
+  }
+
+  .tabs__items {
+    font-size: 12px;
+  }
+
+  .about__text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 330px) {
+  .tabs__items {
+    font-size: 10px;
+  }
+}
+
+// Cтрелка вверх
+
+.button__up {
+  display: inline-block;
+  background-color: #ab2179;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.button__up::after {
+  content: "▲";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.2em;
+  line-height: 40px;
+  color: #fff;
+}
+
+.button__up:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+
+.button__up:active {
+  background-color: #555;
+}
+
+.button__up.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 500px) {
+  .button__up {
+    margin: 30px;
+  }
+}

@@ -1,0 +1,70 @@
+.hi {
+    background: url("../../img/002.jpg") 100% center no-repeat;
+    background-size: cover;
+    height: 750px;
+    @include disflex(flex, center, center);
+    @include fontzcolor(30px, #fff);
+
+    .hi-container {
+        @include disflex(flex, center, flex-start);
+        @include wd(100%, 100%);
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0px 40px 0px 40px;
+
+        .hi-title {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hi-subtitle {
+            line-height: 56px;
+            margin-bottom: 60px;
+            font-family: Montserrat;
+        }
+
+        // Адаптация от Вьячеславкуса
+        @media (max-width: 999px) {
+            .hi-title {
+                font-size: 40px;
+                font-weight: 500;
+            }
+
+            .hi-subtitle {
+                line-height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hi-title {
+                font-size: 30px;
+                font-weight: 500;
+            }
+
+            .hi-subtitle {
+                line-height: 30px;
+                font-size: 20px;
+            }
+        }
+
+        .hi__link {
+            @extend %tplneon;
+        }
+
+        // Адаптация от Вьячеславкуса
+        @media (max-width: 767px) {
+            .hi__link {
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .hi__link {
+                font-size: 12px;
+            }
+        }
+    }
+}

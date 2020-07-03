@@ -72,6 +72,9 @@ $this->title = 'Каталог — Ананас Shop-sharing';
                                     </a>
                                 <?php endif; ?>
                             </div>
+                            <div class="product__button">
+                                <a href="#"><i class="fas fa-star"></i><span class="button__text">&nbsp;Добавлено</span></a>
+                            </div>
                         </div>
                     <?php endforeach; ?>
 

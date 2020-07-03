@@ -1,0 +1,387 @@
+%tplcabinet-block {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px 40px;
+  background: #09102c;
+  border-radius: 10px;
+}
+
+%tplcabinet-title {
+  font-size: 30px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 36px;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.cabinet {
+  min-height: 70vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  grid-gap: 1em;
+  background: #fff;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.personal,
+.goodies,
+.ticket,
+.favorite {
+  width: 350px;
+  height: 450px;
+  font-family: Montserrat;
+}
+
+.personal {
+  @extend %tplcabinet-block;
+  padding-bottom: 10px;
+
+  &-title {
+    @extend %tplcabinet-title;
+    font-family: Comfortaa;
+  }
+
+  &-inputs {
+    padding: 0 60px;
+    margin-bottom: 40px;
+    input {
+      @extend %tplinput;
+      margin: 10px 0;
+      &::placeholder {
+        color: #000;
+      }
+    }
+  }
+
+  &-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &__link {
+      @extend %tplneon;
+      justify-content: center;
+      font-size: 18px;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.ticket__icon {
+  font-size: 150px;
+  margin-bottom: 20px;
+  margin-top: -40px;
+}
+
+.ticket {
+  @extend %tplcabinet-block;
+
+  &-title {
+    @extend %tplcabinet-title;
+    font-family: Comfortaa;
+  }
+
+  &-info {
+    text-align: center;
+
+    &__title {
+      font-size: 26px;
+      margin-bottom: 10px;
+      span {
+        color: gold;
+        font-weight: bold;
+        font-family: Comfortaa;
+      }
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    &__date {
+      font-size: 30px;
+      @extend %tpltext;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    &__next {
+      font-size: 20px;
+      line-height: 26px;
+      span {
+        @extend %tpltext;
+        color: #fff;
+      }
+    }
+  }
+
+  &-button {
+    &__link {
+      @extend %tplneon;
+    }
+  }
+}
+
+.goodies {
+  @extend %tplcabinet-block;
+
+  &-title {
+    @extend %tplcabinet-title;
+    font-family: Comfortaa;
+  }
+
+  &-text {
+    text-align: center;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: -15px;
+  }
+
+  &-button {
+    &__link {
+      @extend %tplneon;
+    }
+  }
+}
+
+.favorite {
+  @extend %tplcabinet-block;
+
+  &-title {
+    @extend %tplcabinet-title;
+    font-family: Comfortaa;
+  }
+
+  &-items {
+    width: 100%;
+    margin-top: -20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__item {
+      width: 45%;
+      max-width: 170px;
+      background: transparent;
+      border-radius: 10px;
+      span {
+        padding: 7px 5px 7px;
+        font-size: 18px;
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
+      img {
+        background-color: white;
+        padding: 4px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        grid-gap: 0em 0;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &-button {
+    &__link {
+      @extend %tplneon;
+    }
+  }
+}
+.favorite__not {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.favorite__icon {
+  font-size: 150px;
+  margin-bottom: 20px;
+  margin-top: -40px;
+}
+
+@media (max-width: 1550px) {
+  .button__page,
+  .personal-button__link {
+    font-size: 85%;
+  }
+  .personal-inputs input {
+    font-size: 90%;
+  }
+  .goodies-text {
+    font-size: 90%;
+  }
+  .title__page {
+    font-size: 130%;
+  }
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1390px) {
+  .cabinet__wrapper {
+    display: inline;
+  }
+  .cabinet {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .button__page,
+  .personal-button__link {
+    font-size: 90%;
+  }
+  .personal-inputs input {
+    font-size: 100%;
+  }
+  .goodies-text {
+    font-size: 100%;
+  }
+  .title__page {
+    font-size: 140%;
+  }
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 400px;
+    height: 500px;
+  }
+  .cabinet {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5em 0em;
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 968px) {
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 350px;
+  }
+  .cabinet {
+    grid-gap: 1em;
+    padding: 50px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 300px;
+  }
+  .button__page,
+  .personal-button__link {
+    font-size: 85%;
+  }
+  .personal-inputs input {
+    font-size: 80%;
+    margin-bottom: 5px;
+  }
+  .personal-inputs {
+    margin-bottom: 20px;
+  }
+  .goodies-text {
+    font-size: 90%;
+  }
+  .favorite-items {
+    margin-bottom: 20px;
+  }
+  .title__page {
+    font-size: 120%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 649px) {
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 400px;
+    height: 500px;
+  }
+  .button__page,
+  .personal-button__link {
+    font-size: 90%;
+  }
+  .personal-inputs input {
+    font-size: 100%;
+  }
+  .goodies-text {
+    font-size: 100%;
+  }
+  .title__page {
+    font-size: 130%;
+  }
+  .title__page {
+    font-size: 150%;
+    margin-bottom: 10px;
+  }
+  .cabinet {
+    grid-template-columns: 1fr;
+    grid-gap: 1.5em 0em;
+    padding: 40px 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 350px;
+    transform: scale(0.9);
+  }
+  .cabinet {
+    padding: 20px 0px;
+    grid-gap: 0em 0em;
+  }
+}
+
+@media (max-width: 350px) {
+  .personal,
+  .goodies,
+  .ticket,
+  .favorite {
+    width: 305px;
+    height: 430px;
+  }
+  .cabinet {
+    padding: 20px 0px;
+  }
+  .button__page,
+  .personal-button__link {
+    font-size: 86%;
+  }
+  .personal-inputs input {
+    font-size: 90%;
+    margin-bottom: 0px;
+  }
+  .goodies-text {
+    font-size: 90%;
+  }
+  .title__page {
+    font-size: 120%;
+    margin-bottom: 0px;
+  }
+}

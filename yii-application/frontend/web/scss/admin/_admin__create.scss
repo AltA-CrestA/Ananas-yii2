@@ -1,0 +1,96 @@
+.admin__creating {
+  padding: 40px 20px;
+}
+
+.create__panel {
+  h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #af2179;
+  }
+}
+
+.create__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 447px;
+    height: 35px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  input {
+    border-bottom: 2px solid #ab2179;
+    height: 25px;
+    padding: 2px;
+    width: 447px;
+    margin-bottom: 70px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    border-bottom: 1px solid silver;
+  }
+}
+
+.create__button {
+  padding: 0 10px;
+  width: 450px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: silver;
+
+  &:hover {
+    background-color: rgb(119, 119, 119);
+    color: white;
+  }
+}
+
+.button__place {
+  display: flex;
+  justify-content: space-between;
+}
+
+// ------------
+.option__create {
+  font-family: Comfortaa;
+  appearance: none;
+  border-bottom: 2px solid #ab2179;
+  flex: 1;
+  padding: 2px;
+  cursor: pointer;
+}
+/* Custom Select */
+.select {
+  margin-bottom: 70px;
+  position: relative;
+  display: flex;
+  width: 447px;
+  height: 25px;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 2px;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+option {
+  color: black;
+}

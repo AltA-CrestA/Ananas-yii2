@@ -72,6 +72,7 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                         <a href="<?php echo Url::to(['favorite/add', 'id' => $productWomen->id]); ?>" class="btn mark">
                                             <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
                                         </a>
+                                    
                                     <?php endif; ?>
 
                                 </div>

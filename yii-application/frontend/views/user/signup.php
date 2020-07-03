@@ -12,37 +12,39 @@ $this->title = 'Регистрация';
 ?>
 
 <section class="signup">
-    <div class="signup-container">
+    <div class="signup__container">
         <h2>Создание аккаунта</h2>
-        <?php $form = ActiveForm::begin([
-                'id' => 'form-signup',
-                'options' => ['class' => 'signup__container-form',]
-        ]); ?>
+        <div class="signup__container-form">
+            <?php $form = ActiveForm::begin([
+                    'id' => 'form-signup',
+                    'options' => ['class' => 'signup__container-form',]
+            ]); ?>
 
-        <div class="signup__container-form-item">
-            <div class="signup__container-form-item-string">
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            <div class="signup__container-form-item">
+                <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                </div>
+                <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'email')->input('email') ?>
+                </div>
             </div>
-            <div class="signup__container-form-item-string">
-                <?= $form->field($model, 'email')->input('email') ?>
+            <div class="signup__container-form-item">
+                <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'password')->passwordInput() ?>
+                </div>
             </div>
-        </div>
-        <div class="signup__container-form-item">
-            <div class="signup__container-form-item-string">
-                <?= $form->field($model, 'password')->passwordInput() ?>
+            <div class="signup__container-form-item">
+                <div class="checkbox__register">
+                    <label>
+                        <input type="checkbox" id="signup-checkbox">
+                        <div class="checkbox__div"></div>
+                    </label>
+                    <p>Я согласен на обработку персональных данных согласно <a href="/privacy/">политике конфиденциальности</a>.</p>
+                </div>
+                <?= Html::submitButton('Создать аккаунт', ['class' => 'signup__button', 'name' => 'signup-button']) ?>
             </div>
-        </div>
-        <div class="signup__container-form-item">
-            <div class="checkbox__register">
-                <label>
-                    <input type="checkbox" id="signup-checkbox">
-                    <div class="checkbox__div"></div>
-                </label>
-                <p>Я согласен на обработку персональных данных согласно <a href="/privacy/">политике конфиденциальности</a>.</p>
-            </div>
-            <?= Html::submitButton('Создать аккаунт', ['class' => 'signup__button', 'name' => 'signup-button']) ?>
-        </div>
 
-        <?php ActiveForm::end(); ?>
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
 </section>
