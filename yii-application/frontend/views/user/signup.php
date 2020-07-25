@@ -7,6 +7,7 @@
 use frontend\models\forms\SignupForm;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Url;
 use yii\widgets\MaskedInput;
 
 $this->title = 'Регистрация';
@@ -58,7 +59,7 @@ $this->title = 'Регистрация';
                         <input type="checkbox" id="signup-checkbox">
                         <div class="checkbox__div"></div>
                     </label>
-                    <p>Я согласен на обработку персональных данных согласно <a href="/privacy/">политике конфиденциальности</a>.</p>
+                    <p>Я согласен на обработку персональных данных согласно <a href="<?= Url::to(['site/privacy']) ?>">политике конфиденциальности</a>.</p>
                 </div>
                 <?= Html::submitButton('Создать аккаунт', ['class' => 'signup__button', 'name' => 'signup-button']) ?>
             </div>

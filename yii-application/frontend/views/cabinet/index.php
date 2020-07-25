@@ -45,7 +45,7 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
         <div class="goodies-title title__page">Ништяки</div>
         <div class="goodies-text">При использовании приложения «Выгода 2.0» вам будут начисляться бонусные балы, которые являются своеобразной валютой, за которые в дальнейшем вы можете приобрести в нашем магазине множество чудесных подарков!</div>
         <div class="goodies-button button__page">
-            <a href="" class="goodies-button__link">Подробнее</a>
+            <a href="<?= Url::to(['site/index', '#' => 'vigoda']) ?>" class="goodies-button__link">Подробнее</a>
         </div>
     </section>
     <section class="favorite">

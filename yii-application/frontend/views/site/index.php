@@ -99,7 +99,7 @@ $this->title = 'Главная — Ананас Shop-sharing';
             </section>
         </div>
     </div>
-    <div class="vigoda">
+    <div class="vigoda" id="vigoda">
         <div class="vigoda-title wow fadeInLeft" data-wow-offset="50">Выгода 2.0</div>
         <div class="vigoda-content">
             <div class="vigoda__title">Условия бонусной программы</div>

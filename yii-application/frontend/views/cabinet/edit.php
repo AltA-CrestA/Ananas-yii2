@@ -1,8 +1,13 @@
 <?php
 
+/* @var $this yii\web\View */
+
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-use yii\widgets\MaskedInput; ?>
+use yii\widgets\MaskedInput;
+
+$this->title = 'Редактировать данные — Ананас Shop-sharing';
+?>
 
 <main>
     <div class="edit-wrapper">

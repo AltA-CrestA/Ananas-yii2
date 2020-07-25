@@ -27,6 +27,10 @@ class CabinetController extends Controller
 
     public function actionEdit()
     {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['user/login']);
+        }
+
         $user = $this->findModel();
 
         $model = new EditForm($user);

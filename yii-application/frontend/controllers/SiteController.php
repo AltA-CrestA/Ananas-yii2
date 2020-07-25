@@ -61,6 +61,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionPrivacy()
+    {
+        return $this->render('privacy');
+    }
+
     /**
      * Displays contact page.
      *
