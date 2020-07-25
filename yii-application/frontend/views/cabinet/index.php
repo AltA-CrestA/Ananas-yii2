@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = 'Личный кабинет — Ананас Shop-sharing';
@@ -12,12 +13,12 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
     <section class="personal">
         <div class="personal-title title__page">Персональные данные</div>
         <div class="personal-inputs">
-            <input type="text" placeholder="<?php echo Yii::$app->user->identity->username; ?>" disabled>
-            <input type="text" placeholder="<?php echo Yii::$app->user->identity->email; ?>" disabled>
-            <input type="text" placeholder="<?php echo Yii::$app->user->identity->id; ?>" disabled>
+            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->username); ?>" disabled>
+            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->email); ?>" disabled>
+            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->id); ?>" disabled>
         </div>
         <div class="personal-button button__page">
-            <a href="/cabinet/edit/" class="personal-button__link">Редактировать</a>
+            <a href="<?= Url::to(['cabinet/edit']); ?>" class="personal-button__link">Редактировать</a>
             <!--            <a href="#" class="personal-button__link">Изменить пароль</a>-->
         </div>
     </section>

@@ -12,11 +12,14 @@ use yii\web\IdentityInterface;
  * This is the model class for table "user".
  *
  * @property int $id
+ * @property string $name
+ * @property string $phone
+ * @property string $email
  * @property string $username
+ * @property integer $card
  * @property string $auth_key
  * @property string $password_hash
  * @property string|null $password_reset_token
- * @property string $email
  * @property int $status
  * @property int $created_at
  * @property int $updated_at
@@ -39,11 +42,14 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
+            'name' => 'Name',
+            'email' => 'Email',
+            'phone' => 'Phone',
             'username' => 'Username',
+            'card' => 'Card',
             'auth_key' => 'Auth Key',
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',
-            'email' => 'Email',
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

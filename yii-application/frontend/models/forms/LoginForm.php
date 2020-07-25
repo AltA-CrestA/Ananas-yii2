@@ -14,6 +14,8 @@ class LoginForm extends Model
     public $username;
     public $password;
 
+    private $_user = false;
+
     public function rules()
     {
         return [
@@ -21,15 +23,15 @@ class LoginForm extends Model
             ['username', 'required'],
             ['username', 'validateUsername'],
             ['password', 'required'],
-            ['password', 'validatePassword']
+            ['password', 'validatePassword'],
         ];
     }
 
     public function login()
     {
         if ($this->validate()) {
-            $user = User::findByUsername($this->username);
-            return Yii::$app->user->login($user);
+//            $user = User::findByUsername($this->username);
+            return Yii::$app->user->login($this->getUser(),  3600*24*30);
         }
         return false;
     }
@@ -49,6 +51,15 @@ class LoginForm extends Model
         if (!$user || !$user->validatePassword($this->password)) {
             $this->addError($attribute, 'Неверный пароль');
         }
+    }
+
+    public function getUser()
+    {
+        if ($this->_user === false) {
+            $this->_user = User::findByUsername($this->username);
+        }
+
+        return $this->_user;
     }
 
 }

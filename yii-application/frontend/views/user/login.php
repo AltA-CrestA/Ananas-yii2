@@ -27,13 +27,6 @@ $this->title = 'Авторизация';
             <div class="login__content-form-item">
                 <?= $form->field($model, 'password')->passwordInput(['class' => 'login__input']) ?>
             </div>
-            <div class="login__content-form-checkbox">
-                <label>
-                    <input type="checkbox" name="remember" value="1">
-                    <div class="checkbox__div"></div>
-                </label>
-                <p>Запомнить меня</p>
-            </div>
             <div id="active" class="login-bottom">
                 <?= Html::submitButton('Войти', ['name' => 'button__login']) ?>
             </div>

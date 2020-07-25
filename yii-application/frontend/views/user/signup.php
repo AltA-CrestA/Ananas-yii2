@@ -7,6 +7,7 @@
 use frontend\models\forms\SignupForm;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\widgets\MaskedInput;
 
 $this->title = 'Регистрация';
 ?>
@@ -22,7 +23,7 @@ $this->title = 'Регистрация';
 
             <div class="signup__container-form-item">
                 <div class="signup__container-form-item-string">
-                    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                    <?= $form->field($model, 'name')->input('text') ?>
                 </div>
                 <div class="signup__container-form-item-string">
                     <?= $form->field($model, 'email')->input('email') ?>
@@ -30,7 +31,25 @@ $this->title = 'Регистрация';
             </div>
             <div class="signup__container-form-item">
                 <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                        'mask' => '+9 999 999-99-99',
+                    ]) ?>
+                </div>
+                <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'username')->input('text') ?>
+                </div>
+            </div>
+            <div class="signup__container-form-item">
+                <div class="signup__container-form-item-string">
                     <?= $form->field($model, 'password')->passwordInput() ?>
+                </div>
+                <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'password_repeat')->passwordInput() ?>
+                </div>
+            </div>
+            <div class="signup__container-form-item">
+                <div class="signup__container-form-item-string">
+                    <?= $form->field($model, 'card')->input('text') ?>
                 </div>
             </div>
             <div class="signup__container-form-item">
