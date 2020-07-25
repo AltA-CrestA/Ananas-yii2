@@ -66,7 +66,7 @@ SiteAsset::register($this);
                         </a>
                         <div class="dropdown-content">
                             <a href="<?php echo Url::to(['cabinet/index']); ?>">Мой профиль</a>
-                            <a href="<?php echo Url::to(['favorite/index']); ?>">Мои закладки (<?php $user = Yii::$app->user->identity; echo $user->countFavorite(); ?>)</a>
+                            <a href="<?php echo Url::to(['favorite/index']); ?>">Мои закладки (<span class="favorite-count"><?php $user = Yii::$app->user->identity; echo $user->countFavorite(); ?></span>)</a>
                             <a><?php echo Html::beginForm(['user/logout'], 'post');
                                     echo Html::submitButton('Выйти (' . Yii::$app->user->identity->username . ')');
                                     echo Html::endForm(); ?>

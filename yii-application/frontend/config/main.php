@@ -46,6 +46,8 @@ return [
                 'abonement' => 'abonement/index',
                 'contact' => 'site/contact',
                 'catalog' => 'catalog/index',
+                'favorite' => 'favorite/index',
+                'favorite/add/<id:\d+>' => 'favorite/add',
                 'category/<category:\w+>/<id:\d+>' => 'catalog/category',
                 'cart' => 'cart/index',
                 'cart/add/<id:\d+>' => 'cart/add',

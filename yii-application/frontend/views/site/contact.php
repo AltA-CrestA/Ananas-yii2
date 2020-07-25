@@ -23,7 +23,7 @@ $this->title = 'Контакты — Ананас Shop-sharing';
                         <img src="<?php echo Yii::getAlias('@imgFrontEnd')?>/contact/smartphone_mobile_icon.svg" class="contact__icon" alt="">
                     </div>
                     <div class="block__text">
-                        <p><span class="text__stil">Ждем ваших звонков:</span> <a href="tel:8 800 555 33 55"> 8 800 555 33 55</a></p>
+                        <p><span class="text__stil">Ждем ваших звонков:</span> <a href="tel:+79029900277"> 8 902 990 02 77</a></p>
                     </div>
                 </div>
                 <div class="contact__block">
@@ -31,7 +31,7 @@ $this->title = 'Контакты — Ананас Shop-sharing';
                         <img src="<?php echo Yii::getAlias('@imgFrontEnd')?>/contact/Office.svg" class="contact__icon" alt="">
                     </div>
                     <div class="block__text">
-                        <p><span class="text__stil">Мы работаем:</span> с 12:00 - 22:00</p>
+                        <p><span class="text__stil">Часы работы:</span> с 14:00 - 20:00 ежедневно</p>
                     </div>
                 </div>
                 <div class="contact__block">
@@ -39,7 +39,7 @@ $this->title = 'Контакты — Ананас Shop-sharing';
                         <img src="<?php echo Yii::getAlias('@imgFrontEnd')?>/contact/newsletter.svg" class="contact__icon" alt="">
                     </div>
                     <div class="block__text">
-                        <p><span class="text__stil">Будем рады вашим письмам:</span> <a href="#">info@ananaskras.ru</a></p>
+                        <p><span class="text__stil">Будем рады вашим письмам:</span> <a href="mailto:ananaskras@inbox.ru">ananaskras@inbox.ru</a></p>
                     </div>
                 </div>
             </div>

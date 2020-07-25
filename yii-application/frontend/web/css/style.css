@@ -49,13 +49,19 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
 
 .signup .signup-mistakes, .login__content .login-mistakes { color: #ff0000; line-height: 30px; text-align: center; margin: 20px 40px; border-radius: 20px; padding: 10px 20px; text-shadow: red 0px 0px 0.6em, red 0px 0px 0.75em; }
 
-@-webkit-keyframes neon6 { 0% { text-shadow: 0 0 1.2px #fff, 0 0 2.5px #fff, 0 0 3.5px #fff, 0 0 5px #ff00de, 0 0 8.5px #ff00de, 0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 18.5px #ff00de; }
-  50% { text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #ff00de, 0 0 17px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37px #ff00de; }
-  100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; } }
+@-webkit-keyframes neon6 { 0% { text-shadow: 0 0 1.2px #fff, 0 0 2.5px #fff, 0 0 3.5px #fff, 0 0 5px #ff00de, 0 0 8.5px #ff00de,
+ 0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 18.5px #ff00de; }
+  50% { text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #ff00de, 0 0 17px #ff00de,
+ 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37px #ff00de; }
+  100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de,
+ 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; } }
 
-@keyframes neon6 { 0% { text-shadow: 0 0 1.2px #fff, 0 0 2.5px #fff, 0 0 3.5px #fff, 0 0 5px #ff00de, 0 0 8.5px #ff00de, 0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 18.5px #ff00de; }
-  50% { text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #ff00de, 0 0 17px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37px #ff00de; }
-  100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; } }
+@keyframes neon6 { 0% { text-shadow: 0 0 1.2px #fff, 0 0 2.5px #fff, 0 0 3.5px #fff, 0 0 5px #ff00de, 0 0 8.5px #ff00de,
+ 0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 18.5px #ff00de; }
+  50% { text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #ff00de, 0 0 17px #ff00de,
+ 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37px #ff00de; }
+  100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de,
+ 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; } }
 
 @-webkit-keyframes blink { 78% { color: inherit;
     text-shadow: inherit; }
@@ -1419,3 +1425,5 @@ body { font-family: Comfortaa; font-size: 20px; word-wrap: break-word; }
 .button__up.show { opacity: 1; visibility: visible; }
 
 @media (min-width: 500px) { .button__up { margin: 30px; } }
+
+.display-none { display: none; }

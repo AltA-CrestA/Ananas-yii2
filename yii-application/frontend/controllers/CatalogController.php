@@ -15,14 +15,17 @@ class CatalogController extends Controller
     {
         $condition = ['status' => Yii::$app->params['enableStatus']];
         $productList = Product::find()->where($condition)->orderBy('id')->all();
+        $currentUser = Yii::$app->user->identity;
 
         return $this->render('index', [
             'productList' => $productList,
+            'currentUser' => $currentUser
         ]);
     }
 
    public function actionCategory($category, $id)
    {
+       $currentUser = Yii::$app->user->identity;
 
        if ($category == 'women') {
            $conditionWomen = [
@@ -51,6 +54,7 @@ class CatalogController extends Controller
            'productListMen' => $productListMen,
            'productListBisex' => $productListBisex,
            'category' => $category,
+           'currentUser' => $currentUser,
        ]);
    }
 

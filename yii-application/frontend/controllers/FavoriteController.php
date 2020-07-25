@@ -8,6 +8,7 @@ use frontend\models\User;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\Response;
 
 class FavoriteController extends Controller
 {
@@ -28,28 +29,40 @@ class FavoriteController extends Controller
         ]);
     }
 
-    public function actionAdd($id)
+    public function actionAdd()
     {
         /* @var $currentUser User */
         $currentUser = Yii::$app->user->identity;
+        $id = Yii::$app->request->post('id');
 
         $product = $this->findProductById($id);
 
         $currentUser->addFavorite($product);
 
-        return $this->redirect(['favorite/index']);
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'success' => true,
+            'favoriteCount' => $currentUser->countFavorite(),
+        ];
     }
 
-    public function actionDelete($id)
+    public function actionDelete()
     {
         /* @var $currentUser User */
         $currentUser = Yii::$app->user->identity;
+        $id = Yii::$app->request->post('id');
 
         $product = $this->findProductById($id);
 
         $currentUser->deleteFavorite($product);
 
-        return $this->redirect(['favorite/index']);
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'success' => true,
+            'favoriteCount' => $currentUser->countFavorite(),
+        ];
     }
 
     /**

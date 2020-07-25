@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Url;
+use yii\web\JqueryAsset;
 
 $this->title = 'Мои закладки — Ананас Shop-sharing';
 ?>
@@ -11,22 +12,19 @@ $this->title = 'Мои закладки — Ананас Shop-sharing';
             <h1>Мои закладки</h1>
         </div>
 
-        <?php if ($user->getFavorites()) : ?>
+        <?php if ($user && $user->getFavorites()) : ?>
             <div class="catalog__item">
                 <div class="catalog__products">
 
                     <?php foreach ($user->getFavorites() as $favorite) : ?>
-                        <div  class="catalog__box">
+                        <div class="catalog__box" id="catalog__box__<?= $favorite['id'] ?>">
                             <div class="img__product">
-                                <img src="<?php echo Yii::getAlias('@imgFrontEnd'); ?>/catalog_jpg/<?php echo $favorite['image']; ?>" alt="">
+                                <img src="<?= Yii::getAlias('@imgFrontEnd'); ?>/catalog_jpg/<?= $favorite['image']; ?>" alt="">
                             </div>
                             <h3><?php echo $favorite['name']; ?></h3>
-                            <p class="textforproduct">Размер: <?php echo $favorite['size']; ?> | Цвет: <?php echo $favorite['color']; ?></p>
+                            <p class="textforproduct">Размер: <?= $favorite['size']; ?> | Цвет: <?php echo $favorite['color']; ?></p>
                             <div class="product__button1">
-                                <a href="<?php echo Url::to(['favorite/delete', 'id' =>$favorite['id'] ]); ?>" class="mark btn__delite"><i class="fas fa-star"></i><span class="button__text"> В закладках</span></a>
-                            </div>
-                            <div class="product__button1">
-                                <a href="#"><i class="far fa-star"></i><span class="button__text">&nbsp;Удалено</span></a>
+                                <a href="<?= Url::to(['favorite/delete', 'id' =>$favorite['id'] ]); ?>" class="mark btn__delete" data-id="<?= $favorite['id']; ?>"><i class="fas fa-star"></i><span class="button__text"> Удалить из закладок</span></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -42,3 +40,7 @@ $this->title = 'Мои закладки — Ананас Shop-sharing';
 
     </div>
 </main>
+
+<?php $this->registerJsFile('js/deleteFromFavorite.js', [
+    'depends' => JqueryAsset::className()
+]);

@@ -138,4 +138,11 @@ class User extends ActiveRecord implements IdentityInterface
 
         return $redis->scard("user:{$this->id}:favorite");
     }
+
+    public function isAddedToFavorite($product)
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        return $redis->sismember("user:{$this->id}:favorite", "$product");
+    }
 }

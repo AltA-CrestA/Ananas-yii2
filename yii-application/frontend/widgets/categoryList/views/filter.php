@@ -1,10 +1,22 @@
 <?php
 /* @var $categoryWomenList frontend\models\Category */
+/* @var $categoryMenList frontend\models\Category */
+/* @var $categoryBisexList frontend\models\Category */
 
 use yii\helpers\Url;
 
-/* @var $categoryMenList frontend\models\Category */
-/* @var $categoryBisexList frontend\models\Category */
+foreach ($categoryWomenList as $categoryWomen) {
+    (Url::current() == Url::to(['catalog/category', 'category' => 'women', 'id' => $categoryWomen['id']])) ? $this->title = $categoryWomen['name'] . " — Ананас Shop-sharing" : false;
+}
+
+foreach ($categoryMenList as $categoryMen) {
+    (Url::current() == Url::to(['catalog/category', 'category' => 'men', 'id' => $categoryMen['id']])) ? $this->title = $categoryMen['name'] . " — Ананас Shop-sharing" : false;
+}
+
+foreach ($categoryBisexList as $categoryBisex) {
+    (Url::current() == Url::to(['catalog/category', 'category' => 'bisex', 'id' => $categoryBisex['id']])) ? $this->title = $categoryBisex['name'] . " — Ананас Shop-sharing" : false;
+}
+
 ?>
 
 <div class="filter__box-mini">

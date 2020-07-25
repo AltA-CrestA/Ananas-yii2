@@ -4,10 +4,12 @@
 
 use frontend\widgets\categoryList\CategoryList;
 use yii\helpers\Url;
+use yii\web\JqueryAsset;
 
 /* @var $prductList frontend\models\Product */
 
 $this->title = 'Каталог — Ананас Shop-sharing';
+
 ?>
 
 <?php echo CategoryList::widget(); ?>
@@ -53,7 +55,7 @@ $this->title = 'Каталог — Ананас Shop-sharing';
                 <div class="catalog__products">
 
                     <?php foreach ($productList as $product): ?>
-                        <div  class="catalog__box">
+                        <div class="catalog__box">
                             <div class="img__product">
                                 <picture class="image__wrapper">
                                     <img src="<?php echo Yii::getAlias('@imgFrontEnd'); ?>/catalog_jpg/<?php echo $product->image; ?>" alt="" class="minimized">
@@ -61,19 +63,13 @@ $this->title = 'Каталог — Ананас Shop-sharing';
                             </div>
                             <h2><?php echo $product->name; ?></h2>
                             <p class="textforproduct">Размер: <?php echo $product->size; ?> | Цвет: <?php echo $product->color; ?></p>
-                            <div class="product__button">
-                                <?php if (Yii::$app->user->isGuest): ?>
-                                    <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
-                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                    </a>
-                                <?php else : ?>
-                                    <a href="<?php echo Url::to(['favorite/add', 'id' => $product->id]); ?>" class="btn mark">
-                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                    </a>
-                                <?php endif; ?>
+                            <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($product->id)) ? 'display-none' : false ?> product__add__<?= $product->id; ?> product__button">
+                                <a class="btn mark <?= ($currentUser) ? 'add_to_favorite' : false ?>" data-id="<?= $product->id; ?>" href="<?php echo Url::to(['favorite/add', 'id' => $product->id]); ?>">
+                                    <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                </a>
                             </div>
-                            <div class="product__button">
-                                <a href="#"><i class="fas fa-star"></i><span class="button__text">&nbsp;Добавлено</span></a>
+                            <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($product->id)) ? false : 'display-none' ?> product__added__<?= $product->id; ?> product__button1">
+                                <a href="<?= Url::to(['favorite/index']); ?>"><i class="fas fa-star"></i><span class="button__text">&nbsp;Добавлено</span></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -83,3 +79,7 @@ $this->title = 'Каталог — Ананас Shop-sharing';
         </div>
     </div>
 </section>
+
+<?php $this->registerJsFile('js/addToFavorite.js', [
+    'depends' => JqueryAsset::className()
+]);

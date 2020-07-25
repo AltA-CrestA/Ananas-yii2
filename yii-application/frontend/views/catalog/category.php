@@ -4,10 +4,8 @@
 
 use frontend\widgets\categoryList\CategoryList;
 use yii\helpers\Url;
+use yii\web\JqueryAsset;
 
-/* @var $prductList frontend\models\Product */
-
-$this->title = 'Категория ??? — Ананас Shop-sharing';
 ?>
 
 <?php echo CategoryList::widget(); ?>
@@ -62,19 +60,13 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                 </div>
                                 <h2><?php echo $productWomen->name; ?></h2>
                                 <p class="textforproduct">Размер: <?php echo $productWomen->size; ?> | Цвет: <?php echo $productWomen->color; ?></p>
-                                <div class="product__button">
-
-                                    <?php if (Yii::$app->user->isGuest): ?>
-                                        <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
-                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                        </a>
-                                    <?php else : ?>
-                                        <a href="<?php echo Url::to(['favorite/add', 'id' => $productWomen->id]); ?>" class="btn mark">
-                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                        </a>
-                                    
-                                    <?php endif; ?>
-
+                                <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($productWomen->id)) ? 'display-none' : false ?> product__add__<?= $productWomen->id; ?> product__button">
+                                    <a class="btn mark <?= ($currentUser) ? 'add_to_favorite' : false ?>" data-id="<?= $productWomen->id; ?>" href="<?= Url::to(['favorite/add', 'id' => $productWomen->id]); ?>">
+                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                    </a>
+                                </div>
+                                <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($productWomen->id)) ? false : 'display-none' ?> product__added__<?= $productWomen->id; ?> product__button1">
+                                    <a href="<?= Url::to(['favorite/index']); ?>"><i class="fas fa-star"></i><span class="button__text">&nbsp;Добавлено</span></a>
                                 </div>
                             </div >
                         <?php endforeach; ?>
@@ -88,18 +80,13 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                 </div>
                                 <h2><?php echo $productMen->name; ?></h2>
                                 <p class="textforproduct">Размер: <?php echo $productMen->size; ?> | Цвет: <?php echo $productMen->color; ?></p>
-                                <div class="product__button">
-
-                                    <?php if (Yii::$app->user->isGuest): ?>
-                                        <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
-                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                        </a>
-                                    <?php else : ?>
-                                        <a href="<?php echo Url::to(['favorite/add', 'id' => $productMen->id]); ?>" class="btn mark">
-                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                        </a>
-                                    <?php endif; ?>
-
+                                <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($productMen->id)) ? 'display-none' : false ?> product__add__<?= $productMen->id; ?> product__button">
+                                    <a class="btn mark <?= ($currentUser) ? 'add_to_favorite' : false ?>" data-id="<?= $productMen->id; ?>" href="<?= Url::to(['favorite/add', 'id' => $productMen->id]); ?>">
+                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                    </a>
+                                </div>
+                                <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($productMen->id)) ? false : 'display-none' ?> product__added__<?= $productMen->id; ?> product__button1">
+                                    <a href="<?= Url::to(['favorite/index']); ?>"><i class="fas fa-star"></i><span class="button__text">&nbsp;Добавлено</span></a>
                                 </div>
                             </div >
                         <?php endforeach; ?>
@@ -113,18 +100,13 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
                                 </div>
                                 <h2><?php echo $productBisex->name; ?></h2>
                                 <p class="textforproduct">Размер: <?php echo $productBisex->size; ?> | Цвет: <?php echo $productBisex->color; ?></p>
-                                <div class="product__button">
-
-                                    <?php if (Yii::$app->user->isGuest): ?>
-                                        <a href="<?php echo Url::to(['user/login']); ?>" class="btn mark">
-                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                        </a>
-                                    <?php else : ?>
-                                        <a href="<?php echo Url::to(['favorite/add', 'id' => $productBisex->id]); ?>" class="btn mark">
-                                            <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
-                                        </a>
-                                    <?php endif; ?>
-
+                                <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($productBisex->id)) ? 'display-none' : false ?> product__add__<?= $productBisex->id; ?> product__button">
+                                    <a class="btn mark <?= ($currentUser) ? 'add_to_favorite' : false ?>" data-id="<?= $productBisex->id; ?>" href="<?= Url::to(['favorite/add', 'id' => $productBisex->id]); ?>">
+                                        <i class="far fa-star star1"></i><span class="button__text">Добавить в закладки</span>
+                                    </a>
+                                </div>
+                                <div class="<?= ($currentUser && $currentUser->isAddedToFavorite($productBisex->id)) ? false : 'display-none' ?> product__added__<?= $productBisex->id; ?> product__button1">
+                                    <a href="<?= Url::to(['favorite/index']); ?>"><i class="fas fa-star"></i><span class="button__text">&nbsp;Добавлено</span></a>
                                 </div>
                             </div >
                         <?php endforeach; ?>
@@ -134,3 +116,7 @@ $this->title = 'Категория ??? — Ананас Shop-sharing';
         </div>
     </div>
 </section>
+
+<?php $this->registerJsFile('js/addToFavorite.js', [
+    'depends' => JqueryAsset::className()
+]);
