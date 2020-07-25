@@ -5,6 +5,8 @@ namespace frontend\controllers;
 
 
 use frontend\controllers\behaviors\AccessBehavior;
+use frontend\models\forms\EditForm;
+use frontend\models\User;
 use Yii;
 use yii\web\Controller;
 
@@ -25,11 +27,25 @@ class CabinetController extends Controller
 
     public function actionEdit()
     {
-        $user = Yii::$app->user->identity;
+        $user = $this->findModel();
+
+        $model = new EditForm($user);
+
+        if ($model->load(Yii::$app->request->post()) && $model->edit()) {
+            return $this->redirect(['cabinet/index']);
+        }
 
         return $this->render('edit', [
-            'user' => $user,
+            'model' => $model,
         ]);
+    }
+
+    /**
+     * @return User the loaded model
+     */
+    private function findModel()
+    {
+        return User::findOne(Yii::$app->user->identity->getId());
     }
 
 }

@@ -13,9 +13,9 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
     <section class="personal">
         <div class="personal-title title__page">Персональные данные</div>
         <div class="personal-inputs">
-            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->username); ?>" disabled>
+            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->name); ?>" disabled>
             <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->email); ?>" disabled>
-            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->id); ?>" disabled>
+            <input type="text" placeholder="<?= Html::encode(Yii::$app->user->identity->username); ?>" disabled>
         </div>
         <div class="personal-button button__page">
             <a href="<?= Url::to(['cabinet/edit']); ?>" class="personal-button__link">Редактировать</a>
@@ -37,7 +37,7 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
         <div class="ticket-button button__page">
             <!-- <a href="season-ticket.php" class="ticket-button__link">Посмотреть все</a> -->
             <div class="ticket__not">
-                <a href="season-ticket.php" class="ticket-button__link">Приобрести</a>
+                <a href="<?= Url::to(['abonement/index']) ?>" class="ticket-button__link">Приобрести</a>
             </div>
         </div>
     </section>

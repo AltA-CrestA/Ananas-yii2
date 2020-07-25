@@ -1,43 +1,36 @@
 <?php
 
-use yii\helpers\Html; ?>
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
+use yii\widgets\MaskedInput; ?>
 
 <main>
     <div class="edit-wrapper">
         <section class="edit">
             <div class="edit-title">Редактировать персональные данные</div>
 
-            <form action="" method="POST" class="edit-inputs">
-<!--                <div class="edit-inputs__input">-->
-<!--                    <label for="firstname">Ваше Имя</label>-->
-<!--                    <input type="text" name="name" value="--><?//= Html::encode(Yii::$app->user->identity->name); ?><!--">-->
-<!--                </div>-->
-<!--                <div class="edit-inputs__input">-->
-<!--                    <label for="lastname">Ваша Фамилия</label>-->
-<!--                    <input type="text" name="surname" value="--><?php //echo $user['surname']; ?><!--">-->
-<!--                </div>-->
-<!--                <div class="edit-inputs__input">-->
-<!--                    <label for="date">Дата рождения</label>-->
-<!--                    <input type="date" name="birth" value="--><?php //echo $user['birth']; ?><!--">-->
-<!--                </div>-->
+            <?php $form = ActiveForm::begin([
+                'options' => ['class' => 'edit-inputs',]
+            ]); ?>
                 <div class="edit-inputs__input">
-                    <label for="email">Ваш E-mail</label>
-                    <input type="email" name="email" value="<?php echo $user['email']; ?>">
+                    <?= $form->field($model, 'name')->input('text', ['value' => Yii::$app->user->identity->name]) ?>
                 </div>
                 <div class="edit-inputs__input">
-                    <label for="tel">Номер телефона</label>
-                    <input class="online_phone signup-input" name="phone" type="tel"
-                           value=""
-                           placeholder="+7(___)___-__-__">
+                    <?= $form->field($model, 'email')->input('email') ?>
                 </div>
                 <div class="edit-inputs__input">
-                    <label for="login">Ваш логин</label>
-                    <input type="text" name="login" value="<?php echo $user['username']; ?>">
+                    <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                        'mask' => '+9 999 999-99-99',
+                    ])->input('tel', ['value' => Yii::$app->user->identity->phone]) ?>
+                </div>
+                <div class="edit-inputs__input">
+                    <?= $form->field($model, 'username')->input('text', ['value' => Yii::$app->user->identity->username]) ?>
                 </div>
                 <div class="edit-buttons">
-                    <button type="submit" name="do_edit" class="edit-buttons__link">Редактировать данные</button>
+                    <?= Html::submitButton('Изменить данные', ['class' => 'edit-buttons__link', 'name' => 'do_edit']) ?>
                 </div>
-            </form>
+            <?php ActiveForm::end(); ?>
+
         </section>
     </div>
 </main>
