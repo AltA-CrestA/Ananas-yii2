@@ -50,19 +50,24 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
     </section>
     <section class="favorite">
         <div class="favorite-title title__page">Закладки</div>
-        <!-- <div class="favorite-items">
+        <div class="favorite-items">
             <div class="favorite-items__item">
-                <img src="/img/товары/IMG_7873 копия (1).jpg" alt="">
+                <img src="../../img/catalog_jpg/1.jpg" alt="">
                 <span>Шорты</span>
             </div>
             <div class="favorite-items__item">
-                <img src="/img/товары/IMG_7873 копия (1).jpg" alt="">
+                <img src="../../img/catalog_jpg/1.jpg" alt="">
                 <span>Шорты</span>
             </div>
-        </div> -->
+        </div>
         <div class="favorite__not">
-            <i class="far fa-sad-tear favorite__icon"></i>
-            <p>У вас нет закладок</p>
+            <!-- Когда закладок нет -->
+
+            <!-- <i class="far fa-sad-tear favorite__icon"></i>
+            <p>У вас нет закладок</p> -->
+
+
+            <!-- Когда закладки есть -->
         </div>
         <div class="favorite-button button__page">
             <a href="<?php echo Url::to(['favorite/index']); ?>" class="favorite-button__link">Подробнее</a>

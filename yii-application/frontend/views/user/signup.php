@@ -61,7 +61,7 @@ $this->title = 'Регистрация';
                     </label>
                     <p>Я согласен на обработку персональных данных согласно <a href="<?= Url::to(['site/privacy']) ?>">политике конфиденциальности</a>.</p>
                 </div>
-                <?= Html::submitButton('Создать аккаунт', ['class' => 'signup__button', 'name' => 'signup-button']) ?>
+                <?= Html::submitButton('Создать аккаунт', ['id' => 'signup-button', 'class' => 'signup__button', 'name' => 'signup-button']) ?>
             </div>
 
             <?php ActiveForm::end(); ?>

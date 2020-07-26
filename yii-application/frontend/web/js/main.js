@@ -26,36 +26,6 @@ $('.vigoda__tabs .tabs__item')
 	.eq(0)
 	.addClass('active');
 
-// // Цвет кнопки закладок + изменение содержимого в КАТАЛОГЕ
-// $('.product__button').click(function () {
-// 	$(this).toggleClass('change');
-// });
-
-// $('.product__button').click(function () {
-// 	if (!$(this).data('status')) {
-// 		$(this).html('<i class="fas fa-star"></i>&nbsp;Добавлено');
-// 		$(this).data('status', true);
-// 	} else {
-// 		$(this).html('<i class="far fa-star"></i>&nbsp;Добавить в закладки');
-// 		$(this).data('status', false);
-// 	}
-// });
-
-// // Цвет кнопки закладок + изменение содержимого в МОИ ЗАКЛАДКИ
-// $('.product__button1').click(function () {
-// 	$(this).toggleClass('change');
-// });
-
-// $('.product__button1').click(function () {
-// 	if (!$(this).data('status')) {
-// 		$(this).html('<i class="far fa-star"></i>&nbsp;Удалено');
-// 		$(this).data('status', true);
-// 	} else {
-// 		$(this).html('<i class="fas fa-star"></i>&nbsp;В закладках');
-// 		$(this).data('status', false);
-// 	}
-// });
-
 // Фильтр и корзина
 $(function () {
 	'use strict';
@@ -78,13 +48,13 @@ $('.button-size').click(function () {
 // singup
 $(document).ready(function () {
 	$('#signup-checkbox').click(function () {
-		$('#signup-botton').prop('disabled', !$('#signup-checkbox').prop('checked'));
+		$('#signup-button').prop('disabled', !$('#signup-checkbox').prop('checked'));
 	});
 
-	let checkbox = document.querySelector('#signup-checkbox');
-	let button = document.querySelector('#signup-botton');
+	const checkbox = document.getElementById('signup-checkbox');
+	const button = document.getElementById('signup-button');
 
-	checkbox.onclick = function () {
+	checkbox.onclick = () => {
 		button.classList.toggle('yes-neon');
 		button.classList.toggle('no-neon');
 	};

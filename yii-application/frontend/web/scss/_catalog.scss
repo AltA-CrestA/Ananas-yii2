@@ -223,7 +223,7 @@
   border-radius: 50%;
 
   &.active {
-    background-color: #ab2179;
+    background-color: #218838;
     color: #fff;
   }
 }
@@ -244,7 +244,7 @@
 .catalog__item {
   height: 100%;
   width: 100%;
-  padding: 15px 25px 15px 20px;
+  padding: 15px 25px 20px 20px;
 }
 
 .catalog__products {
@@ -253,7 +253,8 @@
   grid-gap: 1.5em;
   justify-items: stretch;
 
-  h2 {
+  h2,
+  h3 {
     font-family: Montserrat;
     font-size: 14px;
     line-height: 18px;
@@ -281,7 +282,7 @@
   transition: 0.1s ease-in;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 
   .img__product {
@@ -302,35 +303,40 @@
 // Кнопка закладок в товарах
 
 .product__button {
-  color: black;
-  cursor: pointer;
-  text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #fff;
-  border: 1px solid black;
-  border-style: dashed;
-  border-radius: 0.33vw;
-  padding: 5px 10px;
-  font-size: 14px;
-
-  &:hover {
-    background-color: rgb(228, 228, 228);
+  a {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-style: dashed;
+    border-radius: 0.33vw;
+    color: black;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    &:hover {
+      background-color: rgb(228, 228, 228);
+    }
   }
+}
 
-  &.change {
+.product__button3 {
+  margin-top: 10px;
+  a {
+    display: inline-block;
     background: #28a745;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-style: dashed;
+    border-radius: 0.33vw;
     color: white;
-
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
     &:hover {
       color: white;
       background-color: #218838;
     }
-  }
-
-  .button__text,
-  .star1 {
-    color: black;
   }
 }
 
