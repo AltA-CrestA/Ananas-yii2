@@ -130,6 +130,15 @@ class User extends ActiveRecord implements IdentityInterface
         return Product::find()->where(['id' => $ids])->asArray()->all();
     }
 
+    public function getLimitFavorites()
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        $key = "user:{$this->id}:favorite";
+        $ids = $redis->smembers($key);
+        return Product::find()->where(['id' => $ids])->limit(2)->asArray()->all();
+    }
+
     public function deleteFavorite($product)
     {
         /* @var $redis Connection */

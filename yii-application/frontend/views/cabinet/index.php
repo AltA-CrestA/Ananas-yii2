@@ -50,27 +50,30 @@ $this->title = 'Личный кабинет — Ананас Shop-sharing';
     </section>
     <section class="favorite">
         <div class="favorite-title title__page">Закладки</div>
+
+        <!-- Когда закладки есть -->
+        <?php if ($user && $user->getLimitFavorites()) : ?>
         <div class="favorite-items">
+
+            <?php foreach ($user->getLimitFavorites() as $favorite) : ?>
             <div class="favorite-items__item">
-                <img src="../../img/catalog_jpg/1.jpg" alt="">
-                <span>Шорты</span>
+                <img src="<?= Yii::getAlias('@imgFrontEnd'); ?>/catalog_jpg/<?= $favorite['image']; ?>" alt="">
+                <span><?= $favorite['name']; ?></span>
             </div>
-            <div class="favorite-items__item">
-                <img src="../../img/catalog_jpg/1.jpg" alt="">
-                <span>Шорты</span>
-            </div>
-        </div>
-        <div class="favorite__not">
-            <!-- Когда закладок нет -->
+            <?php endforeach; ?>
 
-            <!-- <i class="far fa-sad-tear favorite__icon"></i>
-            <p>У вас нет закладок</p> -->
-
-
-            <!-- Когда закладки есть -->
         </div>
         <div class="favorite-button button__page">
             <a href="<?php echo Url::to(['favorite/index']); ?>" class="favorite-button__link">Подробнее</a>
+        </div>
+        <!-- Когда закладок нет -->
+        <?php else: ?>
+
+        <div class="favorite__not">
+            <i class="far fa-sad-tear favorite__icon"></i>
+            <p>У вас нет закладок</p>
+        <?php endif; ?>
+
         </div>
     </section>
 </main>

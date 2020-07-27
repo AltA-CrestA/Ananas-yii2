@@ -22,7 +22,11 @@ class CabinetController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $user = Yii::$app->user->identity;
+
+        return $this->render('index', [
+            'user' => $user,
+        ]);
     }
 
     public function actionEdit()
