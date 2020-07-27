@@ -31,6 +31,10 @@ class FavoriteController extends Controller
 
     public function actionAdd()
     {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['user/login']);
+        }
+
         /* @var $currentUser User */
         $currentUser = Yii::$app->user->identity;
         $id = Yii::$app->request->post('id');
